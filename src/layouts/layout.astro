@@ -1,0 +1,28 @@
+---
+import "@styles/config.css";
+import "@styles/default.css";
+import "@styles/layout.css";
+
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
+import Container from "@components/container.astro";
+---
+
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Shell Design</title>
+	</head>
+	<body>
+        <Container>
+            <Header />
+            <main>
+                <slot />
+            </main>
+            <Footer />
+        </Container>
+	</body>
+</html>
