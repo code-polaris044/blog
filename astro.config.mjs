@@ -7,4 +7,5 @@ import icon from "astro-icon";
 export default defineConfig({
     site: siteUrl,
     trailingSlash: "always",
+    integrations: [icon()],
 });

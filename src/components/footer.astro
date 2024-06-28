@@ -1,18 +1,26 @@
 ---
-import Icon from '../icons/IcBaselineAddCircleOutline.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <footer>
-  <ul>
-    <li>
-      <a href="http://twitter.com/">
-        <Icon />
-      </a>
-    </li>
-    <li>
-      <a href="http://github.com">
-      </a>
-    </li>
-  </ul>
+	<ul>
+		<li>
+			<a rel="prefetch" href="https://twitter.com/">
+				<Icon name="mdi:rss" />
+			</a>
+		</li>
+		<li>
+			<a rel="prefetch" href="https://github.com/">
+				<Icon name="mdi:github" />
+			</a>
+		</li>
+	</ul>
 </footer>
+
+<style>
+[data-icon] {
+    font-size: 2.6rem;
+    color: var(--brand-color);
+}
+</style>
 
