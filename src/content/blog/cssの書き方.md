@@ -1,7 +1,7 @@
 ---
 title: cssの書き方
 slug: css-method
-pubDate: "2023-02-18"
+pubDate: "2024-02-18"
 image: /assets/css-method.jpg
 category:
     - css

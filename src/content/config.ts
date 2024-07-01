@@ -1,17 +1,21 @@
 import { z, defineCollection } from 'astro:content';
-import { zonedTimeToUtc } from 'date-fns-tz'; // 'zonedTimeToUtc' は 'date-fns-tz' からエクスポートされていません。
+import { fromZonedTime } from 'date-fns-tz';
 
 const blogCollection = defineCollection({
     type: 'content', // v2.5.0以降
-    schema: z.object({
-        title: z.string(),
-        pubDate: z.string().transform((str) => zonedTimeToUtc(str, 'Asia/Tokyo')),
-        image: z.string(),
-        category: z.array(z.string()),
-        description: z.string(),
-    }),
+	schema: z.object({    
+		title: z.string(),
+        pubDate: z.string().transform((str) => {
+            const date = new Date(fromZonedTime(str, 'Asia/Tokyo'));
+            console.log(date);
+            return date;
+        }),
+		image: z.string(),
+		category: z.array(z.string()),
+		description: z.string(),
+	}),
 });
 
 export const collections = {
-    blog: blogCollection,
-}
+	blog: blogCollection,
+};
