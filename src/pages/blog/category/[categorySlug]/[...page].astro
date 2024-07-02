@@ -18,18 +18,16 @@ export async function getStaticPaths({ paginate }: { paginate: any } ) {
 
 	return categories.flatMap((category) => {
 		const { categorySlug, categoryName } = category;
-			return paginate(sortedBlogPosts, {
+
+		const filteredPosts = sortedBlogPosts.filter((post)=> {
+			return post.data.category.includes(categorySlug);
+		})
+			return paginate(filteredPosts, {
 				params: { categorySlug },
 				props: {categoryName },
 				pageSize: 6
 			});
 	});
-
-			// 	return paginate(sortedBlogPosts, {
-			// 	params: { categorySlug: 'javascript' },
-			// 	props: {categoryName: 'javascript' },
-			// 	pageSize: 6
-			// });
 }
 
 
