@@ -29,6 +29,9 @@ importers:
       date-fns-tz:
         specifier: ^3.1.3
         version: 3.1.3(date-fns@3.6.0)
+      github-markdown-css:
+        specifier: ^5.6.1
+        version: 5.6.1
       plaiceholder:
         specifier: ^2.5.0
         version: 2.5.0(sharp@0.33.4)
@@ -1129,6 +1132,10 @@ packages:
   get-stream@8.0.1:
     resolution: {integrity: sha512-VaUJspBffn/LMCJVoMvSAdmscJyS1auj5Zulnn5UoYcY531UWmdwhRWkcGKnGU93m5HSXP9LP2usOryrBtQowA==}
     engines: {node: '>=16'}
+
+  github-markdown-css@5.6.1:
+    resolution: {integrity: sha512-DItLFgHd+s7HQmk63YN4/TdvLeRqk1QP7pPKTTPrDTYoI5x7f/luJWSOZxesmuxBI2srHp8RDyoZd+9WF+WK8Q==}
+    engines: {node: '>=10'}
 
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
@@ -3439,6 +3446,8 @@ snapshots:
   get-stream@6.0.1: {}
 
   get-stream@8.0.1: {}
+
+  github-markdown-css@5.6.1: {}
 
   github-slugger@2.0.0: {}
 
