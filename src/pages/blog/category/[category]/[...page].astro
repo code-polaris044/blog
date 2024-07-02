@@ -16,7 +16,10 @@ export async function getStaticPaths({ paginate }: { paginate: any } ) {
 	compareDesc(a.data.pubDate, b.data.pubDate)
 	);
 
-	return paginate(sortedBlogPosts, { pageSize: 6});
+	return paginate(sortedBlogPosts, {
+		params: { categorySlug: 'javascript' },
+		props: { categorySlug: 'javascript' },
+		pageSize: 6});
 }
 
 
@@ -25,12 +28,13 @@ const {
         data = [],
         url: { prev, next }
     },
+	categoryName,
 } = Astro.props;
 
 ---
 
-<Layout pageTitle="Blog Posts" description="ブログの記事一覧">
-	<h1>blog posts</h1>
+<Layout pageTitle={categoryName} description={`${categoryName}の一覧`}>
+	<h1>{categoryName}</h1>
 	<div class="grid">
 		{
 			data.map((post: { slug: string; data: { image: string; title: string } }) => {
