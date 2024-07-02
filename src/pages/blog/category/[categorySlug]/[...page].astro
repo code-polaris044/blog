@@ -1,14 +1,10 @@
 ---
-// import Layout from "@layouts/layout.astro";
-// import Card from "@components/card.astro";
-// import Pagination from "@components/pagination.astro";
+import Layout from "@layouts/layout.astro";
+import Card from "@components/card.astro";
+import Pagination from "@components/pagination.astro";
 
-import Layout from "./../../../../layouts/layout.astro";
-import Card from "./../../../../components/card.astro";
-import Pagination from "./../../../../components/pagination.astro";
 
-// import { categories } from '@lib/constants'
-import {categories} from "./../../../../lib/constants";
+import { categories } from '@lib/constants'
 import { getCollection } from "astro:content";
 import { compareDesc } from "date-fns";
 
@@ -20,7 +16,7 @@ export async function getStaticPaths({ paginate }: { paginate: any } ) {
 	compareDesc(a.data.pubDate, b.data.pubDate)
 	);
 
-	return categories.map((category) => {
+	return categories.flatMap((category) => {
 		const { categorySlug, categoryName } = category;
 			return paginate(sortedBlogPosts, {
 				params: { categorySlug },
@@ -28,6 +24,12 @@ export async function getStaticPaths({ paginate }: { paginate: any } ) {
 				pageSize: 6
 			});
 	});
+
+			// 	return paginate(sortedBlogPosts, {
+			// 	params: { categorySlug: 'javascript' },
+			// 	props: {categoryName: 'javascript' },
+			// 	pageSize: 6
+			// });
 }
 
 
