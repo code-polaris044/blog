@@ -1,10 +1,14 @@
 ---
-import type { GetStaticPaths } from "astro";
-import Layout from "@layouts/layout.astro";
-import Card from "@components/card.astro";
-import Pagination from "@components/pagination.astro";
+// import Layout from "@layouts/layout.astro";
+// import Card from "@components/card.astro";
+// import Pagination from "@components/pagination.astro";
 
+import Layout from "./../../../../layouts/layout.astro";
+import Card from "./../../../../components/card.astro";
+import Pagination from "./../../../../components/pagination.astro";
 
+// import { categories } from '@lib/constants'
+import {categories} from "./../../../../lib/constants";
 import { getCollection } from "astro:content";
 import { compareDesc } from "date-fns";
 
@@ -16,10 +20,14 @@ export async function getStaticPaths({ paginate }: { paginate: any } ) {
 	compareDesc(a.data.pubDate, b.data.pubDate)
 	);
 
-	return paginate(sortedBlogPosts, {
-		params: { categorySlug: 'javascript' },
-		props: { categorySlug: 'javascript' },
-		pageSize: 6});
+	return categories.map((category) => {
+		const { categorySlug, categoryName } = category;
+			return paginate(sortedBlogPosts, {
+				params: { categorySlug },
+				props: {categoryName },
+				pageSize: 6
+			});
+	});
 }
 
 
@@ -30,8 +38,8 @@ const {
     },
 	categoryName,
 } = Astro.props;
-
 ---
+
 
 <Layout pageTitle={categoryName} description={`${categoryName}の一覧`}>
 	<h1>{categoryName}</h1>
