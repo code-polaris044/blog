@@ -4,7 +4,7 @@ slug: css-method
 pubDate: "2024-02-18"
 image: /assets/css-method.jpg
 category:
-    - css
+    - javascript
 description: cssの書き方を、、、
 ---
 
