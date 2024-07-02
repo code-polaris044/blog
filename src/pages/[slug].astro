@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths({}) {
+    const blogPosts = await getCollection('blog');
+    console.log(blogPosts);
+    
+
+    return blogPosts.map((post) => {
+        return { params: { slug: post.slug}};
+    });
+}
+---
+
+<Layout>
+    <article>
+        <h1>記事タイトル</h1>
+    </article>
+</Layout>

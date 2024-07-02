@@ -1,13 +1,10 @@
 ---
-import type { GetStaticPaths } from "astro";
 import Layout from "@layouts/layout.astro";
 import Card from "@components/card.astro";
 import Pagination from "@components/pagination.astro";
 
-
 import { getCollection } from "astro:content";
 import { compareDesc } from "date-fns";
-
 
 export async function getStaticPaths({ paginate }: { paginate: any } ) {
 
