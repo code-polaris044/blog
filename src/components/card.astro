@@ -4,7 +4,7 @@ const { url, src, alt = '', title } = Astro.props;
 ---
 
 <article class="card">
-    <a href={url}>
+    <a rel="prefetch" href={url}>
         <img src={src} alt={alt} />
         <!-- <Custompicture src={src} alt={alt} /> -->
         <h2>{title}</h2>

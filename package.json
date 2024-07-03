@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.7.0",
     "@astrojs/image": "^0.18.0",
+    "@astrojs/prefetch": "^0.4.1",
     "@iconify-json/mdi": "^1.1.67",
     "astro": "^4.11.0",
     "astro-icon": "^1.1.0",
