@@ -2,6 +2,7 @@ export const siteMeta = {
     siteTitle: "Shell Design",
     siteDesc: "Shell Designのブログサイト",
     siteUrl: "http://localhost:4321",
+    // siteUrl: "http://localhost:4322",
     siteType: "webdsite",
     siteLocale: "ja_Jp",
     siteIcon: "/favicon.ico",
