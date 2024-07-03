@@ -3,6 +3,7 @@ import { siteMeta } from "./src/lib/constants";
 import icon from "astro-icon";
 import image from "@astrojs/image";
 import prefetch from "@astrojs/prefetch";
+import sitemap from "@astrojs/sitemap";
 const {
   siteUrl
 } = siteMeta;
@@ -13,5 +14,5 @@ export default defineConfig({
   site: siteUrl,
   integrations: [icon(), image({
     serviceEntryPoint: '@astrojs/image/sharp'
-  }), prefetch()]
+  }), prefetch(), sitemap()]
 });
