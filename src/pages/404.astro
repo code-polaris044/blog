@@ -1,8 +1,13 @@
 ---
 import  Layout  from "@layouts/layout.astro";
+import React from 'react';
 ---
 
 <Layout pageTitle="404 - Page not found" >
-	<h1>404</h1>
-    <p>ページが見つかりません</p>
+    <div class="app">
+        <React.Fragment>
+            <h1>404</h1>
+            <p>お探しのページが見つかりませんでした。</p>
+        </React.Fragment>
+    </div>
 </Layout>
