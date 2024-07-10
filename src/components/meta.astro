@@ -1,5 +1,6 @@
 ---
 import { siteMeta } from "@lib/constants";
+import SpeedInsights from '@vercel/speed-insights/astro';
 const { siteTitle, siteDesc, siteLocale, siteType, siteIcon, siteImg } = siteMeta;
 const {
     pageTitle,
@@ -30,3 +31,4 @@ const socialImageURL = new URL(pageImg, Astro.site);
 <link rel="apple-touch-icon" href={siteIcon} />
 <meta property="og:image" content={socialImageURL} />
 <meta name="twitter:card" content="summary_large_image" />
+<SpeedInsights />
