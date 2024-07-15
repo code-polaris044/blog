@@ -1,0 +1,38 @@
+---
+import Layout from "@layouts/layout.astro";
+import Card from "@components/card.astro";
+import Pagination from "@components/pagination.astro";
+
+import { categories } from '@lib/constants'
+import { getCollection } from "astro:content";
+import { compareDesc } from "date-fns";
+
+
+export async function getStaticPaths(): Promise<{ params: { tag: string } }[]> {
+  const allPosts = await Astro.glob('../../../content/blog/*.mdx');
+
+  // すべての投稿からタグを抽出し、重複を除去
+  const uniqueTags = [...new Set(allPosts.flatMap(post => post.frontmatter.tags || []))];
+
+  // 各タグに対してパスを生成
+  return uniqueTags.map(tag => ({
+    params: { tag },
+    props: { posts: allPosts.filter(post => post.frontmatter.tags?.includes(tag)) }
+  }));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+---
+
+<Layout pageTitle={tag}>
+      <h1>{tag}のタグが付いた記事</h1>
+      <div>
+      {posts.map(post => (
+        <p class="tags_item" key={post.frontmatter.slug}>
+          <Card url={`/blog/${post.frontmatter.slug}`} src={post.frontmatter.image} title={post.frontmatter.title} />
+        </p>
+      ))}
+      <div>
+</Layout>

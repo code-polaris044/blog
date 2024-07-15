@@ -10,6 +10,11 @@ export const siteMeta = {
 };
 
 export const categories = [
-    { categoryName: "Python", categorySlug: "python" },
-    { categoryName: "JavaScript", categorySlug: "javascript" },
+    { categoryName: "Markup", categorySlug: "markup" },
+    { categoryName: "CMS", categorySlug: "cms" },
+    { categoryName: "Library", categorySlug: "library" },
+    { categoryName: "Framework", categorySlug: "framework" },
+    { categoryName: "Javascript", categorySlug: "javascript" },
+    { categoryName: "PHP", categorySlug: "php" },
+    { categoryName: "WEB", categorySlug: "web" },
 ];

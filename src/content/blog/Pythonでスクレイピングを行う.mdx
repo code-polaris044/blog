@@ -5,6 +5,8 @@ pubDate: '2023-02-01'
 image: /assets/python-scraping.jpg
 category:
   - python
+tags:
+  - sass
 description: Python でスクレイピングを行う方法を紹介。必要なモジュールのインストール、リクエスト・解析などの流れをまとめています。
 ---
 
@@ -45,7 +47,7 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup(res.text, 'html.parser')
 ```
 
-解析が終わったら、取得したい情報を取り出します。BeautifulSoup は、find メソッドや find_all メソッドを使うことで情報を取り出すことが可能です。例えば、\<h1>のテキストを取得したい場合は、以下のように記述します。
+解析が終わったら、取得したい情報を取り出します。BeautifulSoup は、find メソッドや find\_all メソッドを使うことで情報を取り出すことが可能です。例えば、\<h1>のテキストを取得したい場合は、以下のように記述します。
 
 ```python
 title = soup.find('h1').text

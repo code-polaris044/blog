@@ -6,7 +6,11 @@ image: /assets/python.jpg
 category:
   - python
   - javascript
-description: Node.js製のpython-shellモジュールを使うことで、JavaScriptからPythonへのデータの送受信が可能に。Pythonスクリプトを実行し、結果を受け取る方法も解説します。
+tags:
+  - css
+  - test
+description: >-
+  Node.js製のpython-shellモジュールを使うことで、JavaScriptからPythonへのデータの送受信が可能に。Pythonスクリプトを実行し、結果を受け取る方法も解説します。
 ---
 
 Python を JavaScript から実行するということは、Web サーバー上で Python スクリプトを動かすことが可能となることです。
@@ -34,7 +38,7 @@ pyshell.end(function (err) {
 });
 ```
 
-上記のようにすると、Node.js アプリケーションから Python スクリプトを実行して結果を受け取ることができます。あとは、my_python_script.py に記述されたスクリプトの中身によって処理内容が変わります。
+上記のようにすると、Node.js アプリケーションから Python スクリプトを実行して結果を受け取ることができます。あとは、my\_python\_script.py に記述されたスクリプトの中身によって処理内容が変わります。
 
 例えば、以下のような Python スクリプトを作成すると、Node.js 側から送信した文字列を受信して、そのまま返す処理を実行できます。
 
