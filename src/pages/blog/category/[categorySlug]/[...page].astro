@@ -48,9 +48,9 @@ const {
 			data.map((post: { slug: string; data: { image: string; title: string } }) => {
 				const {
 					slug,
-					data: { image, title },
+					data: { image, title, alt },
 				} = post;
-				return <Card url={`/blog/${slug}`} src={image} title={title} />;
+				return <Card url={`/blog/${slug}`} src={image} alt={alt} title={title} />;
 			})
 		}
 	</div>

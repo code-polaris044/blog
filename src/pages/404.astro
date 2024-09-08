@@ -1,6 +1,8 @@
 ---
 import  Layout  from "@layouts/layout.astro";
 import React from 'react';
+import { categories } from "../lib/constants";
+
 ---
 
 <Layout pageTitle="404 - Page not found" >
@@ -8,6 +10,12 @@ import React from 'react';
         <React.Fragment>
             <h1>404</h1>
             <p>お探しのページが見つかりませんでした!!</p>
+            <h2>カテゴリー一覧</h2>
+            <ul>
+                {categories.map((category) => (
+                    <li key={category.categorySlug}>{category.categoryName}</li>
+                ))}
+            </ul>
         </React.Fragment>
     </div>
 </Layout>

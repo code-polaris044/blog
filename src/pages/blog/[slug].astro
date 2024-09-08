@@ -34,7 +34,6 @@ export async function getStaticPaths({}) {
                     nextTitle: sortedBlogPosts[currentPage - 1].data.title,
                     next: `/blog/${sortedBlogPosts[currentPage - 1].slug}`,
                 };
-        
 
         return { params: { slug }, props: { post, url: {...prev, ...next} }};
     }); 
@@ -44,7 +43,7 @@ const { post, url } = Astro.props
 const { Content } = await post.render();
 
 const {
-    data: {title, pubDate, image, category, description },
+    data: {title, pubDate, image, alt="",category, description, tags},
 } = post;
 
 const pubDateISO = formatISO(pubDate);
@@ -54,7 +53,7 @@ const pubDateJA = format(pubDate, 'yyyy年MM月dd日');
 
 <Layout pageTitle={title} description={description} pageImg={image}>
     <article>
-        <img src={image} alt="" />
+        <img src={image} alt={alt} />
         <h1>{title}</h1>
         <div class="flex-spacebetween">
             <time datetime={pubDateISO}>{pubDateJA}</time>
@@ -72,6 +71,17 @@ const pubDateJA = format(pubDate, 'yyyy年MM月dd日');
         </div>
         <div class="markdown-body large-space">
             <Content />
+        </div>
+        <div class="tags">
+            <div class="tags">
+                <ul>
+                    {tags && tags.map(tag => (
+                        <li key={tag}>
+                            <a rel="prefetch" href={`/blog/tags/${tag}`}>{tag}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
 
         <Pagination {...url}/>

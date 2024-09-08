@@ -74,6 +74,12 @@ export default defineConfig({
                     },
                     {
                         type: "string",
+                        name: "alt",
+                        label: "画像の説明", // altフィールドを追加
+                        required: false,
+                    },
+                    {
+                        type: "string",
                         name: "category",
                         label: "カテゴリー",
                         list: true,
