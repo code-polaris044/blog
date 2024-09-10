@@ -1,0 +1,27 @@
+---
+import "@pagefind/default-ui/css/ui.css";
+---
+
+<div id="search"></div>
+<script>
+import { PagefindUI } from "@pagefind/default-ui";
+new PagefindUI({
+  element        : '#search',
+  baseUrl        : '/blog/',
+  pageSize       : 10,
+  excerptLength  : 50,
+  showSubResults : false,
+  showImages     : false,
+  translations   : {
+    placeholder  : 'ブログ記事を検索',
+    clear_search : 'クリア',
+    load_more    : 'More',
+    search_label : '',
+    zero_results : '「[SEARCH_TERM]」に一致する記事は見つかりませんでした 🙇‍♂️',
+    many_results : '「[SEARCH_TERM]」の検索結果（[COUNT] 件）',
+    one_result   : '「[SEARCH_TERM]」の検索結果（[COUNT] 件）',
+    searching    : '「[SEARCH_TERM]」を検索しています...',
+  },
+  debounceTimeoutMs: 400,
+});
+</script>
