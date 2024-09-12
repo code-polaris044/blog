@@ -22,7 +22,7 @@ const { posts } = Astro.props;
 
 <Layout pageTitle={tag} description={`${tag}の一覧`}>
       <h1>{tag}</h1>
-      <div class="grid"  data-pagefind-body>
+      <div class="grid">
       {posts.map((post: any) => (
         <p class="tags_item" key={post.frontmatter.slug}>
           <Card url={`/blog/${post.frontmatter.slug}`} src={post.frontmatter.image} alt={post.frontmatter.alt} title={post.frontmatter.title} />

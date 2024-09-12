@@ -43,7 +43,7 @@ const {
 
 <Layout pageTitle={categoryName} description={`${categoryName}の一覧`}>
 	<h1>{categoryName}</h1>
-	<div class="grid"  data-pagefind-body>
+	<div class="grid">
 		{
 			data.map((post: { slug: string; data: { image: string; title: string } }) => {
 				const {

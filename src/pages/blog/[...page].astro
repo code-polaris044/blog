@@ -28,7 +28,7 @@ const {
 
 <Layout pageTitle="Blog Posts" description="ブログの記事一覧" >
 	<h1>blog posts</h1>
-	<div class="grid" data-pagefind-body>
+	<div class="grid">
 		{
 			data.map((post: { slug: string; data: { image: string; title: string } }) => {
 				const {
