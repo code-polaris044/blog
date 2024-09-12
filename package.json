@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "tinacms dev -c \"astro dev\"",
         "start": "tinacms dev -c \"astro dev\"",
-        "build": "tinacms build && astro build && npx pagefind --site .vercel/output/static",
+        "build": "tinacms build && astro build && npx pagefind --site .vercel/output/static --bundle-dir pagefind",
         "preview": "astro preview",
         "astro": "astro"
     },

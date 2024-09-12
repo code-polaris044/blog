@@ -13,6 +13,7 @@ const { siteUrl } = siteMeta;
 // https://astro.build/config
 export default defineConfig({
     site: siteUrl,
+    base: "/",
     integrations: [
         icon(),
         image({
