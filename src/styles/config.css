@@ -48,3 +48,31 @@ body {
     content: ">";
     padding: 0 4px;
 }
+
+.opt_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+#playButton {
+    background-color: black;
+    width: 60px;
+    height: 40px;
+    border: none;
+    color: #ccc;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s; /* トランジションの時間 */
+    border-radius: 12px; /* 角を丸く */
+    /* margin-inline: auto; */
+}
+
+#playButton:hover {
+    background-color: white; /* ホバー時の背景色 */
+    color: black; /* ホバー時の文字色 */
+    border: 2px solid #4caf50; /* ホバー時のボーダー */
+}
