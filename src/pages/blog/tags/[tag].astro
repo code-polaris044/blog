@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/layout.astro";
 import Card from "@components/card.astro";
+import Breadcrumb from "@components/breadcrumb.astro";
 
 export async function getStaticPaths(): Promise<{ params: { tag: string } }[]> {
   const allPosts = await Astro.glob('../../../content/blog/*.mdx');
@@ -21,6 +22,11 @@ const { posts } = Astro.props;
 ---
 
 <Layout pageTitle={tag} description={`${tag}の一覧`}>
+  	<Breadcrumb lists={[
+      { name: "Blog 一覧", path: "blog" },
+      { name: "タグリスト", path: "tags"},
+      { name: tag},
+	  ]}/>
       <h1>{tag}</h1>
       <div class="grid">
       {posts.map((post: any) => (

@@ -2,10 +2,11 @@
 import  Layout  from "@layouts/layout.astro";
 import React from 'react';
 import { categories } from "../lib/constants";
-
+import Breadcrumb from "@components/breadcrumb.astro";
 ---
 
 <Layout pageTitle="404 - Page not found" >
+    <Breadcrumb lists={[{ name: "404" }]}/>
     <div class="app">
         <React.Fragment>
             <h1>404</h1>
