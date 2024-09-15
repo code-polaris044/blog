@@ -3,7 +3,7 @@
 
 /* pagefind/default-uiのダークモード */
 
-body.dark {
+body.dark-mode {
     --pagefind-ui-primary: #eeeeee;
     --pagefind-ui-text: #eeeeee;
     --pagefind-ui-background: #152028;
