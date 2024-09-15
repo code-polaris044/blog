@@ -2,11 +2,12 @@
 import Layout from "@layouts/layout.astro";
 import Card from "@components/card.astro";
 import Pagination from "@components/pagination.astro";
-
+import Breadcrumb from "@components/breadcrumb.astro";
 
 import { categories } from '@lib/constants'
 import { getCollection } from "astro:content";
 import { compareDesc } from "date-fns";
+
 
 
 export async function getStaticPaths({ paginate }: { paginate: any } ) {
@@ -43,6 +44,10 @@ const {
 
 <Layout pageTitle={categoryName} description={`${categoryName}の一覧`}>
 	<h1>{categoryName}</h1>
+	<Breadcrumb lists={[
+		{ name: "Blog 一覧", path: "blog" },
+		{ name: categoryName}
+	]}/>
 	<div class="grid">
 		{
 			data.map((post: { slug: string; data: { image: string; title: string } }) => {
