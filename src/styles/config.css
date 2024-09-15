@@ -3,5 +3,29 @@
 
 /* 上書き用のスタイル: 上下のスペースを大きくする */
 body .large-space {
-	margin-block: 2.5em;
+    margin-block: 2.5em;
+}
+
+:root {
+    --main-text: #000;
+    --main-bg: #fff;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-text: #fff;
+        --main-bg: #202124;
+    }
+}
+body {
+    color: var(--main-text);
+    background: var(--main-bg);
+    transition: 0.3s;
+}
+.light-mode {
+    --main-text: #000;
+    --main-bg: #fff;
+}
+.dark-mode {
+    --main-text: #fff;
+    --main-bg: #202124;
 }
