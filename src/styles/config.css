@@ -1,11 +1,22 @@
 /* カスケードレイヤー */
 @layer default, layout, theme;
 
+/* pagefind/default-uiのダークモード */
+
+body.dark {
+    --pagefind-ui-primary: #eeeeee;
+    --pagefind-ui-text: #eeeeee;
+    --pagefind-ui-background: #152028;
+    --pagefind-ui-border: #152028;
+    --pagefind-ui-tag: #152028;
+}
+
 /* 上書き用のスタイル: 上下のスペースを大きくする */
 body .large-space {
     margin-block: 2.5em;
 }
 
+/* サイトのダークモード */
 :root {
     --main-text: #000;
     --main-bg: #fff;
