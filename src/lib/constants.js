@@ -7,6 +7,7 @@ export const siteMeta = {
     siteLocale: "ja_Jp",
     siteIcon: "/favicon.ico",
     siteImg: "/ogp.jpg",
+    siteBgm: "/Dark_Hero.mp3",
 };
 
 export const categories = [

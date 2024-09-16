@@ -1,13 +1,20 @@
 ---
+import { siteMeta } from "@lib/constants";
+const { siteBgm } = siteMeta;
+const siteBgmURL = new URL(siteBgm, siteMeta.siteUrl).href; // siteMeta.siteUrlを使用
+console.log('bgmurl', siteBgmURL);
 ---
 
 <button id="playButton">Sound ON</button>
 <script>
 import { Howl } from 'howler';
 
+// siteBgmURLをスクリプト内で使用できるようにする
+const siteBgmURL = "{{ siteBgmURL }}";
+
 // Howlオブジェクトを初期化
 const sound = new Howl({
-  src: ['/public/Dark_Hero.mp3'], // 音声ファイルのパスを指定
+  src: [siteBgmURL], // 正しいURLを指定
   autoplay: false,
   loop: false,
   volume: 1.0,
@@ -25,6 +32,4 @@ document.getElementById('playButton').addEventListener('click', () => {
   }
   isPlaying = !isPlaying; // 再生状態を反転
 });
-
 </script>
-
