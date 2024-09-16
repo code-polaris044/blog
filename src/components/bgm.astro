@@ -1,7 +1,7 @@
 ---
 import { siteMeta } from "@lib/constants";
 const { siteBgm } = siteMeta;
-const siteBgmURL = new URL(siteBgm, siteMeta.siteUrl).href;
+const siteBgmURL = new URL(siteBgm, siteMeta.siteUrl).href; // siteMeta.siteUrlを使用
 console.log('bgmurl', siteBgmURL);
 ---
 
@@ -9,9 +9,12 @@ console.log('bgmurl', siteBgmURL);
 <script>
 import { Howl } from 'howler';
 
-// siteBgmURLを直接JavaScriptに渡す
+// siteBgmURLをスクリプト内で使用できるようにする
+const siteBgmURL = "{{ siteBgmURL }}"; // ここでURLを展開
+
+// Howlオブジェクトを初期化
 const sound = new Howl({
-  src: ['{{ siteBgmURL }}'], // テンプレートエンジンがURLを展開
+  src: [siteBgmURL], // 正しいURLを指定
   autoplay: false,
   loop: false,
   volume: 1.0,
