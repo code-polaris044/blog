@@ -2,7 +2,6 @@
 import { siteMeta } from "@lib/constants";
 const { siteBgm } = siteMeta;
 const siteBgmURL = new URL(siteBgm, siteMeta.siteUrl).href; // siteMeta.siteUrlを使用
-console.log('bgmurl', siteBgmURL);
 ---
 
 <button id="playButton">Sound ON</button>
@@ -14,7 +13,7 @@ const siteBgmURL = "{{ siteBgmURL }}"; // ここでURLを展開
 
 // Howlオブジェクトを初期化
 const sound = new Howl({
-  src: [siteBgmURL], // 正しいURLを指定
+  src: [`${siteBgmURL}`],
   autoplay: false,
   loop: false,
   volume: 1.0,
