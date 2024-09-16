@@ -5,12 +5,9 @@
 <script>
 import { Howl } from 'howler';
 
-// siteBgmURLをスクリプト内で使用できるようにする
-
 // Howlオブジェクトを初期化
 const sound = new Howl({
-//   src: ['/public/Dark_Hero.mp3'], //ローカル環境
-  src: ['Dark_Hero.mp3'], //本番環境
+  src: ['Dark_Hero.mp3'],
   autoplay: false,
   loop: false,
   volume: 1.0,
